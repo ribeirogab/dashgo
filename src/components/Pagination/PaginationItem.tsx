@@ -8,7 +8,7 @@ interface PaginationItemProps {
 
 export function PaginationItem({
   isCurrent = false,
-  pageNumber
+  pageNumber,
 }: PaginationItemProps) {
   if (isCurrent) {
     return (

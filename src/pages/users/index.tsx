@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { 
+import {
   Box,
   Button,
   Checkbox,
@@ -32,10 +32,12 @@ export default function UserList() {
 
         <Box flex="1" borderRadius="8" bg="gray.800" p="8">
           <Flex mb="8" justify="space-between" align="center">
-            <Heading size="lg" fontWeight="normal">Usuários</Heading>
-            
+            <Heading size="lg" fontWeight="normal">
+              Usuários
+            </Heading>
+
             <Link href="/users/create" passHref>
-              <Button 
+              <Button
                 as="a"
                 size="sm"
                 fontSize="sm"
@@ -46,7 +48,7 @@ export default function UserList() {
               </Button>
             </Link>
           </Flex>
-        
+
           <Table colorScheme="whiteAlpha">
             <Thead>
               <Tr>
@@ -67,13 +69,15 @@ export default function UserList() {
                   <Td>
                     <Box>
                       <Text fontWeight="bold">Gabriel Ribeiro</Text>
-                      <Text fontSize="sm" color="gray.300">gblosr@gmail.com</Text>
+                      <Text fontSize="sm" color="gray.300">
+                        gblosr@gmail.com
+                      </Text>
                     </Box>
                   </Td>
                   {isWideVersion && <Td>04 de abril, 2021</Td>}
                   <Td>
                     {isWideVersion && (
-                      <Button 
+                      <Button
                         as="a"
                         size="sm"
                         fontSize="sm"

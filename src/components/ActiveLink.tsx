@@ -10,7 +10,7 @@ interface ActiveLinkProps extends LinkProps {
 export function ActiveLink({
   children,
   shouldMatchExactHref = false,
-  ...rest 
+  ...rest
 }: ActiveLinkProps) {
   const { asPath } = useRouter();
   const isActive = useMemo(() => {
@@ -18,14 +18,13 @@ export function ActiveLink({
       return true;
     }
     if (
-      !shouldMatchExactHref 
-      && 
+      !shouldMatchExactHref &&
       (asPath.startsWith(String(rest.href)) ||
         asPath.startsWith(String(rest.as)))
-      ) {
-        return true;
-      }
-      return false;
+    ) {
+      return true;
+    }
+    return false;
   }, [asPath, shouldMatchExactHref, rest.href, rest.as]);
 
   return (

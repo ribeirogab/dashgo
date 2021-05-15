@@ -1,7 +1,6 @@
 import { extendTheme } from '@chakra-ui/react';
 
 export const theme = extendTheme({
-
   colors: {
     gray: {
       '900': '#181B23',
@@ -26,6 +25,6 @@ export const theme = extendTheme({
         bg: 'gray.900',
         color: 'gray.50',
       },
-    }
-  }
+    },
+  },
 });

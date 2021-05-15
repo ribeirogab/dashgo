@@ -22,11 +22,7 @@ export function Sidebar() {
 
   if (isDrawerSidebar) {
     return (
-      <Drawer
-        isOpen={isOpen}
-        placement="left"
-        onClose={onClose}
-      >
+      <Drawer isOpen={isOpen} placement="left" onClose={onClose}>
         <DrawerOverlay />
         <DrawerContent bg="gray.800" p="4">
           <DrawerCloseButton mt="6" onClick={onClose} />

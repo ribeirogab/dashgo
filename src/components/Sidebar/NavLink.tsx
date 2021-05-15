@@ -1,5 +1,5 @@
 import { ElementType } from 'react';
-import { 
+import {
   Link as ChakraLink,
   LinkProps as ChakraLinkProps,
   Icon,
@@ -19,7 +19,9 @@ export function NavLink({ link, icon, children, ...rest }: NavLinkProps) {
     <ActiveLink href={link} passHref>
       <ChakraLink display="flex" align="center" {...rest}>
         {icon && <Icon as={icon} fontSize="20" />}
-        <Text ml="4" fontWeight="medium">{children}</Text>
+        <Text ml="4" fontWeight="medium">
+          {children}
+        </Text>
       </ChakraLink>
     </ActiveLink>
   );
