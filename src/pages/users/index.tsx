@@ -35,7 +35,9 @@ export default function UserList() {
   const { data, isLoading, error } = useQuery(
     'users',
     async () => {
-      const response = await fetch('http://localhost:3000/api/users');
+      const response = await fetch(
+        process.env.NEXT_PUBLIC_URL || 'http://localhost:3000/api/users',
+      );
       const data = (await response.json()) as { users: UserProps[] };
 
       const users = data.users.map(user => ({
