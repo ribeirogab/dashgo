@@ -30,14 +30,39 @@ export function makeServer() {
     },
 
     seeds(server) {
-      server.createList('user', 10);
+      server.createList('user', 200);
     },
 
     routes() {
       this.namespace = 'api';
       this.timing = 750;
 
-      this.get('/users');
+      this.get('/users', function (schema, request) {
+        const { page = 1, perPage = 10 } = request.queryParams;
+
+        const total = schema.all('user').length;
+
+        const pageStart = (Number(page) - 1) * Number(perPage);
+        const pageEnd = pageStart + Number(perPage);
+
+        const users = this.serialize(schema.all('user')).users.slice(
+          pageStart,
+          pageEnd,
+        );
+
+        const pageInfo = {
+          total,
+          perPage: Number(perPage),
+          currentPage: page,
+          lastPage: Math.ceil(total / Number(perPage)),
+          hasNextPage: page < Math.ceil(total / Number(perPage)),
+        };
+
+        return { pageInfo, users };
+      });
+
+      this.get('/users/:id')
+
       this.post('/users');
 
       this.namespace = '';
