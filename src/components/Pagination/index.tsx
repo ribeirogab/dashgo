@@ -25,7 +25,6 @@ export function Pagination({
   currentPage = 1,
   onPageChange,
 }: PaginationProps) {
-  console.log('oi');
   const lastPage = Math.floor(total / Number(perPage));
 
   const previousPages =

@@ -24,7 +24,6 @@ export default function SignIn() {
   const handleSignIn: SubmitHandler<SignInFormData> = useCallback(
     async data => {
       await new Promise(resolve => setTimeout(resolve, 2000));
-      console.log(data);
     },
     [],
   );
